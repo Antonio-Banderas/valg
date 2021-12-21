@@ -11,14 +11,16 @@
 </head>
 <body>
 
+<!----- navigation buttons ------>
 <nav>
     <a href="../dashboard/dashboard.html"><button>Dashboard</button></a>
     <a href="../result/result.html"><button>Results</button></a>
 </nav>
 
+<!---------- headline --------->
 <h1>Ærøs valg!</h1> <img src="../flag.gif" alt="ærø flag"  width="126"/>
 
-
+<!----- party selection + edit button ------>
 <select id="party-selector" name="parties">
     <option value="A">Socialdemokratiet</option>
     <option value="B">Radikale Venstre</option>
@@ -30,11 +32,9 @@
     <option value="V">Venstre</option>
     <option value="Æ">Ærøs Fremtid</option>
 </select>
-
 <button id="btn-edit-candidates" value="read">🔧</button>
 
-<br>
-<br>
+<!----- table for parties ------>
 <h2 id="party-letter"></h2>
 <table id="party-table">
     <thead>

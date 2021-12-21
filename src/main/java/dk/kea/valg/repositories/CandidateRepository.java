@@ -9,5 +9,4 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 
     List<Candidate> findCandidatesByAffiliationNameOrAffiliationLetter (String name, Character letter);
 
-
 }

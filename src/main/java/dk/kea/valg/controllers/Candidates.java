@@ -31,12 +31,14 @@ public class Candidates {
     (@RequestParam(required = false)String name,@RequestParam(required = false) Character letter)
     {return candidates.findCandidatesByAffiliationNameOrAffiliationLetter(name, letter);}
 
+    // Create (POST)
     @PostMapping("/candidates")
     public Candidate addCandidate(@RequestBody Candidate newCandidate) {
         newCandidate.setId(null); // don't allow the client to overwrite the id
         return candidates.save(newCandidate);
     }
 
+    // PUT
     @PutMapping("/candidates/{id}")
     public String updateCandidateById(@PathVariable Long id, @RequestBody Candidate candidatesToUpdateWith) {
         if (candidates.existsById(id)) {
@@ -48,6 +50,7 @@ public class Candidates {
         }
     }
 
+    // PATCH
     @PatchMapping("/candidates/{id}")
     public String patchArtistById(@PathVariable Long id, @RequestBody Candidate candidateToUpdateWith) {
         return candidates.findById(id).map(foundCandidate -> {
@@ -58,6 +61,7 @@ public class Candidates {
         }).orElse("Candidate not found");
     }
 
+    // DELETE
     @DeleteMapping("/candidates/{id}")
     public String deleteArtistById(@PathVariable Long id) {
         if (candidates.existsById(id)){

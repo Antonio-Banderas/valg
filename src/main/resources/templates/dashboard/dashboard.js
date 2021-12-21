@@ -1,8 +1,8 @@
-let allCandidates;
-let filteredCandidates;
-let selectedParty;
+let allCandidates;        // all candidates from database fetched on-load
+let filteredCandidates;   // candidates you have currently selected with drop-down
+let selectedParty;        // the selected party by party-letter. A, B, O etc...
 
-// -------- on load fetch --------- //
+// -------- on-load fetch --------- //
 window.onload = fetchCandidates;
 function fetchCandidates() {
     fetch(baseURL + "/candidates")
@@ -14,7 +14,7 @@ function fetchCandidates() {
         });
 }
 
-// --------- basic overview ---------- //
+// --------- basic table overview ---------- //
 const tableBody = document.getElementById("party-table-body")
 function createCandidateRow(candidate) {
 
@@ -30,6 +30,7 @@ function createCandidateRow(candidate) {
 
     tableBody.appendChild(tableRow)
 }
+
 
 // ----- edit button ----- //
 document.getElementById("btn-edit-candidates").addEventListener("click", toggleEdit)
@@ -97,7 +98,6 @@ function renderAddNewCandidate() {
 
 
 // ------- fetches ------- //
-
 function createNewCandidate(){
 
     const inputName = document.getElementById("new-candidate-name")

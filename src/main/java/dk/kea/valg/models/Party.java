@@ -31,11 +31,4 @@ public class Party {
     @OneToMany(mappedBy = "affiliation", fetch = FetchType.LAZY)
     private Set<Candidate> candidates;
 
-    // extra for later maybe
-    /*
-    @ManyToOne
-    @JoinColumn(name = "municipality_id", nullable = false)
-    private Municipality municipality;
-     */
-
 }
